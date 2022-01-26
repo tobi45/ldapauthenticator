@@ -1,7 +1,7 @@
 from setuptools import setup
 
 
-version = "1.3.3.dev"
+version = "1.3.2.post1"
 
 
 with open("./ldapauthenticator/__init__.py", "a") as f:
