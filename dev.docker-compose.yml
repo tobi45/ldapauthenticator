@@ -1,0 +1,28 @@
+version: '3'
+services:
+  ldap:   # open ldap server to test authentication gainst
+    image: rroemhild/test-openldap   # see: https://github.com/rroemhild/docker-test-openldap
+    networks: 
+      ldapnet: 
+        aliases: 
+          - hub-test-ldap
+
+  jh-ldap-dev:
+    build:
+      dockerfile: dev.dockerfile
+      context: .
+      args: 
+        PYTHON_VERSION: 3.9
+    depends_on:
+      - ldap
+    # prevent container from exiting before vs code executes commands in it
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment: 
+      LDAP_HOST: hub-test-ldap   # the ldap host for testing
+    volumes:
+      - .:/workspace:cached   # bind mount the project directory for development inside the container
+    networks: 
+      - ldapnet
+
+networks: 
+  ldapnet:
