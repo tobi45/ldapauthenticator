@@ -1,27 +1,29 @@
-# ldapauthenticator
+# JupyterHub LDAP-Authenticator
 
-[![TravisCI (.com) build status](https://img.shields.io/travis/com/jupyterhub/ldapauthenticator/master?logo=travis)](https://travis-ci.com/jupyterhub/ldapauthenticator)
-[![Latest PyPI version](https://img.shields.io/pypi/v/jupyterhub-ldapauthenticator?logo=pypi)](https://pypi.python.org/pypi/jupyterhub-ldapauthenticator)
-[![Latest conda-forge version](https://img.shields.io/conda/vn/conda-forge/jupyterhub-ldapauthenticator?logo=conda-forge)](https://anaconda.org/conda-forge/jupyterhub-ldapauthenticator)
-[![GitHub](https://img.shields.io/badge/issue_tracking-github-blue?logo=github)](https://github.com/jupyterhub/ldapauthenticator/issues)
-[![Discourse](https://img.shields.io/badge/help_forum-discourse-blue?logo=discourse)](https://discourse.jupyter.org/c/jupyterhub)
-[![Gitter](https://img.shields.io/badge/social_chat-gitter-blue?logo=gitter)](https://gitter.im/jupyterhub/jupyterhub)
+This fork of https://github.com/jupyterhub/ldapauthenticator provides two changesets:
 
-Simple LDAP Authenticator Plugin for JupyterHub
+1) add the option `use_search_user_to_check_groups` to check the `allowed_groups` with the configured ldap search user and not with the user currently logging in, see pull request: https://github.com/jupyterhub/ldapauthenticator/pull/207
+2) development environment setup with containers, see section `Alternative Development Environment Setup` in: [CONTRIBUTING.md](CONTRIBUTING.md#alternative-development-environment-setup)
+
+
+## Funding
+
+The customizations were conducted as part of the research project **KI-StudiUm** at the [**Westsächsische Hochschule Zwickau**](https://www.whz.de/english/), which was funded by the [**Federal Ministry of Research, Technology and Space**](https://www.bmftr.bund.de/EN/Home/home_node.html) as part of the federal-state initiative "KI in der Hochschulbildung" under the funding code `16DHBKI063`.
+
+<picture>
+    <source srcset="assets/bmftr-en-dark.svg" media="(prefers-color-scheme: dark)">
+    <img src="assets/bmftr-en-light.svg" height="75px">
+</picture>
+<picture>
+    <source srcset="assets/whz-en-dark.svg" media="(prefers-color-scheme: dark)">
+    <img src="assets/whz-en-light.svg" height="75px">
+</picture>
+
 
 ---
 
-Please note that this repository is participating in a study into sustainability
-of open source projects. Data will be gathered about this repository for
-approximately the next 12 months, starting from 2021-06-11.
+## The original contents of the readme
 
-Data collected will include number of contributors, number of PRs, time taken to
-close/merge these PRs, and issues closed.
-
-For more information, please visit
-[the informational page](https://sustainable-open-science-and-software.github.io/) or download the [participant information sheet](https://sustainable-open-science-and-software.github.io/assets/PIS_sustainable_software.pdf).
-
----
 
 ## Installation ##
 
